@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styled from "styled-components";
+
 
 function MovieForm() {
   const [formData, setFormData] = useState({
@@ -39,9 +39,9 @@ function MovieForm() {
   }
 
   return (
-    <Wrapper>
+    <div>
       <form onSubmit={handleSubmit}>
-        <FormGroup>
+        <div>
           <label htmlFor="title">Title</label>
           <input
             type="text"
@@ -49,8 +49,8 @@ function MovieForm() {
             value={formData.title}
             onChange={handleChange}
           />
-        </FormGroup>
-        <FormGroup>
+        </div>
+        <div>
           <label htmlFor="year">Year</label>
           <input
             type="number"
@@ -60,8 +60,8 @@ function MovieForm() {
             value={formData.year}
             onChange={handleChange}
           />
-        </FormGroup>
-        <FormGroup>
+        </div>
+        <div>
           <label htmlFor="length">Length</label>
           <input
             type="number"
@@ -69,8 +69,8 @@ function MovieForm() {
             value={formData.length}
             onChange={handleChange}
           />
-        </FormGroup>
-        <FormGroup>
+        </div>
+        <div>
           <label htmlFor="director">Director</label>
           <input
             type="text"
@@ -78,16 +78,16 @@ function MovieForm() {
             value={formData.director}
             onChange={handleChange}
           />
-        </FormGroup>
-        <FormGroup>
+        </div>
+        <div>
           <label htmlFor="description">Description</label>
           <textarea
             id="description"
             value={formData.description}
             onChange={handleChange}
           />
-        </FormGroup>
-        <FormGroup>
+        </div>
+        <div>
           <label htmlFor="poster_url">Poster</label>
           <input
             type="text"
@@ -95,8 +95,8 @@ function MovieForm() {
             value={formData.poster_url}
             onChange={handleChange}
           />
-        </FormGroup>
-        <FormGroup>
+        </div>
+        <div>
           <label htmlFor="category">Category</label>
           <input
             type="text"
@@ -104,8 +104,8 @@ function MovieForm() {
             value={formData.category}
             onChange={handleChange}
           />
-        </FormGroup>
-        <FormGroup>
+        </div>
+        <div>
           <label htmlFor="discount">
             Discount?
             <input
@@ -115,8 +115,8 @@ function MovieForm() {
               onChange={handleChange}
             />
           </label>
-        </FormGroup>
-        <FormGroup>
+        </div>
+        <div>
           <label htmlFor="female_director">
             Female Director?
             <input
@@ -126,34 +126,13 @@ function MovieForm() {
               onChange={handleChange}
             />
           </label>
-        </FormGroup>
-        <SubmitButton type="submit">Add Movie</SubmitButton>
+        </div>
+        <button type="submit">Add Movie</button>
       </form>
-    </Wrapper>
+    </div>
   );
 }
+ 
 
-const Wrapper = styled.section`
-  max-width: 500px;
-  margin: 32px auto;
-  padding: 32px;
-`;
-
-const FormGroup = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 16px;
-`;
-
-const SubmitButton = styled.button`
-  background: blue;
-  color: yellow;
-  font-weight: bold;
-  font-family: inherit;
-  font-size: 1.2rem;
-  border: none;
-  padding: 8px 16px;
-  cursor: pointer;
-`;
 
 export default MovieForm;
